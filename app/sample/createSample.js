@@ -5,9 +5,11 @@ function createSample () {
     for (var i = 0; i < 10; i++) {
         var shop = new Shop({
             name: "Shop" + (i+1),
-            address: "Street: " + (i+1) + ", house: 1",
-            hours: "9.00 - 21.00",
-            id: "shop" + i
+            id: "shop" + i,
+            data: {
+                0: "Адрес: Street: " + (i+1) + ", house: 1",
+                1: "Мы работаем: 9.00 - 21.00"
+            }
         });
 
         for (var j = 0; j < 10; j++) {

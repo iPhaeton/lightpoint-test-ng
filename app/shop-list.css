@@ -59,6 +59,6 @@
 	cursor: pointer;
 }
 
-.shop-item {
+item, list {
     display: block;
 }

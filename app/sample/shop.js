@@ -1,14 +1,22 @@
 class Shop {
     constructor (options) {
+        var self = this;
+
         this.id = options.id;
         this.name = options.name;
         this.number = options.number;
-        this.address = options.address;
-        this.hours = options.hours;
+        this.data  = options.data;
+
+        this.commodities = new List();
+
+        this.innerList = {
+            list: self.commodities,
+            button: "Показать товары",
+            type: "collapsable"
+        }
     };
 
     addCommodity (commodity) {
-        if (!this.commodities) this.commodities = new List();
         this.commodities.add(commodity);
     };
 };

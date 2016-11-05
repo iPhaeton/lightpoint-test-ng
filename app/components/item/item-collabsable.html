@@ -1,12 +1,14 @@
+<!--An item for a collabsable list without an inner list-->
+
 <div class="panel-heading">
-    <h3 class="panel-title" data-target="#panel-{{item.id}}" data-toggle="collapse" data-parent="#shop-list">
+    <h3 class="panel-title" data-target="#panel-{{item.id}}" data-toggle="collapse" data-parent="{{parentId}}">
         {{item.number + 1}}. {{item.name}}
     </h3>
 </div>
 <div class="panel-collapse collapse" id="panel-{{item.id}}">
     <div class="panel-body">
         <h3>{{item.name}}</h3>
-        <p>Адрес: {{item.address}}</p>
-        <p>Мы работаем: {{item.hours}}</p>
+        <p ng-repeat="data in item.data">{{data}}</p>
+        <list list="item.innerList.list" type="table"></list>
     </div>
 </div>

@@ -1,3 +1,3 @@
 angular.module("list").controller("ListController", ["$scope", ($scope) => {
-    $scope.list = createSample();
+    if (!$scope.list) $scope.list = createSample();
 }]);

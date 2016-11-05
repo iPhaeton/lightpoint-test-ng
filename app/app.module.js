@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('shopApp', ["list"]);
+angular.module('shopApp', ["list", "item"]);
