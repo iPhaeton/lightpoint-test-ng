@@ -1,0 +1,64 @@
+.shop-list .panel-heading:hover {
+    cursor: pointer;
+}
+
+.shop-list .navbar {
+    margin: 0;
+}
+
+.list-menu {
+    float: right;
+}
+
+.list-menu a {
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.head-menu {
+    background: #333;
+}
+
+.icon-bar {
+    background: #fff;
+}
+
+.panel-title {
+    float: left;
+}
+
+.panel-heading {
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.panel-heading a {
+    margin-right: 15px;
+}
+
+.panel-heading h3 {
+    padding: 15px;
+}
+
+.panel-heading:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.commodity-table a {
+	padding-left: 15px;
+}
+
+.commodity-table a:hover {
+	cursor: pointer;
+}
+
+.shop-item {
+    display: block;
+}
