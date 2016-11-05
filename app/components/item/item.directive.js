@@ -6,7 +6,9 @@ angular.module("item").directive("item", () => {
         scope: {
             item: "="
         },
-        templateUrl: "components/item/item.html",
+        templateUrl: (elem, attr) => {
+            if (attr.type === "collapsable") return "components/item/item-collabsable.html";
+        },
         controller: "ItemController"
     }
 });

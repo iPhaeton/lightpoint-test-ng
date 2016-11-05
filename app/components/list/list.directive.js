@@ -4,7 +4,9 @@ angular.module("list").directive("list", () => {
     return {
         restrict: "E",
         scope: {},
-        templateUrl: "components/list/list.html",
+        templateUrl: (elem, attr) => {
+            if (attr.type === "collapsable") return "components/list/list-collapsable.html";
+        },
         controller: "ListController"
     }
 });
