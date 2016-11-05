@@ -14,7 +14,7 @@ function createSample () {
             var commodity = new Commodity({
                 name: "Commodity" + (j+1),
                 description: "Commodity" + (j+1) + " from Shop" + (i+1),
-                id: commodity + i
+                id: "commodity" + j
             });
             shop.addCommodity(commodity);
         };
