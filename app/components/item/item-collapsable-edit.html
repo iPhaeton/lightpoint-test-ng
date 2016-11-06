@@ -1,0 +1,40 @@
+<div class="panel-heading">
+    <h3 class="panel-title" data-target="#panel-{{item.id}}" data-toggle="collapse" data-parent="{{parentId}}">
+        {{item.number + 1}}. {{item.name}}
+    </h3>
+    <div class="navbar list-menu">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#" ng-click="toggleEditMode()">
+                    Редактировать
+                </a>
+            </li>
+            <li>
+                <a href="#" ng-click="deleteItem()">
+                    Удалить
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="panel-collapse" id="panel-{{item.id}}">
+    <div class="panel-body">
+        <form class="collabpsable-edit">
+            <div class="form-group input-group">
+                <label for="name-input">Название</label>
+                <input id="name-input" type="text" class="form-control" name="name-input">
+            </div>
+            <div class="form-group input-group">
+                <label for="address-input">Адрес</label>
+                <input id="address-input" type="text" class="form-control" name="address-input">
+            </div>
+            <div class="form-group input-group">
+                <label for="hours-input">Время работы</label>
+                <input id="hours-input" type="text" class="form-control" name="hours-input">
+            </div>
+            <a href="#" ng-click="showInnerList()">{{item.innerList.button}}</a>
+            <list list="item.innerList.list" type="item.innerList.type" ng-show="innerListVisible"></list>
+            <button type="submit" class="btn btn-default">Сохранить</button>
+        </form>
+    </div>
+</div>

@@ -5,13 +5,10 @@ angular.module("item").directive("item", () => {
         restrict: "E",
         scope: {
             item: "=",
+            type: "@",
             parentId: "=?"
         },
-        templateUrl: (elem, attr) => {
-            if (attr.type === "collapsable") return "components/item/item-collabsable.html";
-            else if (attr.type === "table") return "components/item/item-table.html";
-            else return "components/item/empty.html";
-        },
+        template: "<div ng-include=\"'components/item/item-' + type + '.html'\"></div>",
         controller: "ItemController"
     }
 });

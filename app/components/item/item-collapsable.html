@@ -1,13 +1,13 @@
 <!--An item for a collabsable list without an inner list-->
 
 <div class="panel-heading">
-    <h3 class="panel-title" data-target="#panel-{{item.id}}" data-toggle="collapse" data-parent="{{parentId}}">
+    <h3 class="panel-title" data-target="#panel-{{item.id}}" data-toggle="collapse" data-parent="{{parentId}}" ng-click="closeAll()">
         {{item.number + 1}}. {{item.name}}
     </h3>
     <div class="navbar list-menu">
         <ul class="nav navbar-nav">
             <li>
-                <a href="#">
+                <a href="#" ng-click="toggleEditMode()">
                     Редактировать
                 </a>
             </li>
@@ -22,7 +22,7 @@
 <div class="panel-collapse collapse" id="panel-{{item.id}}">
     <div class="panel-body">
         <h3>{{item.name}}</h3>
-        <p ng-repeat="data in item.data">{{data}}</p>
+        <p ng-repeat="(key, value) in item.data">{{key}}: {{value}}</p>
         <a href="#" ng-click="showInnerList()">{{item.innerList.button}}</a>
         <list list="item.innerList.list" type="item.innerList.type" ng-show="innerListVisible"></list>
     </div>

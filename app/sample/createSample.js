@@ -7,8 +7,8 @@ function createSample () {
             name: "Shop" + (i+1),
             id: "shop" + i,
             data: {
-                0: "Адрес: Street: " + (i+1) + ", house: 1",
-                1: "Мы работаем: 9.00 - 21.00"
+                "Адрес": "Street: " + (i+1) + ", house: 1",
+                "Мы работаем": "9.00 - 21.00"
             }
         });
 

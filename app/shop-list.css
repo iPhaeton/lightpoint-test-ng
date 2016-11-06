@@ -6,6 +6,11 @@
     margin: 0;
 }
 
+.shop-list .panel-heading {
+    background: #337ab7;
+    color: #fff;
+}
+
 .list-menu {
     float: right;
 }
