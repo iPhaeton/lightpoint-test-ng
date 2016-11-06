@@ -1,11 +1,10 @@
 function createSample () {
     //Create a sample list
-    var list = new List();
+    var list = new ShopList("shops");
 
     for (var i = 0; i < 10; i++) {
         var shop = new Shop({
             name: "Shop" + (i+1),
-            id: "shop" + i,
             data: {
                 "Адрес": "Street: " + (i+1) + ", house: 1",
                 "Мы работаем": "9.00 - 21.00"
@@ -16,7 +15,6 @@ function createSample () {
             var commodity = new Commodity({
                 name: "Commodity" + (j+1),
                 description: "Commodity" + (j+1) + " from Shop" + (i+1),
-                id: "commodity" + j
             });
             shop.addCommodity(commodity);
         };

@@ -1,7 +1,6 @@
 class Commodity {
     constructor (options) {
-        this.id = options.id;
-        this.name = options.name;
+        this.name = options.name || "New commodity";
         this.description = options.description;
     };
 }

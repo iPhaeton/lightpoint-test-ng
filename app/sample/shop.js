@@ -2,12 +2,13 @@ class Shop {
     constructor (options) {
         var self = this;
 
-        this.id = options.id;
-        this.name = options.name;
-        this.number = options.number;
-        this.data  = options.data;
+        this.name = options.name || "New shop";
+        this.data  = options.data || {};
 
-        this.commodities = new List();
+        if (!this.data["Адрес"]) this.data["Адрес"] = "";
+        if (!this.data["Мы работаем"]) this.data["Мы работаем"] = "";
+
+        this.commodities = new CommodityList("commodities");
 
         this.innerList = {
             list: self.commodities,

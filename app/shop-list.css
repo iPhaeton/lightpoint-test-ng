@@ -11,6 +11,11 @@
     color: #fff;
 }
 
+.shop-list .head-menu {
+    background: #333;
+    margin-bottom: 20px;
+}
+
 .list-menu {
     float: right;
 }
@@ -21,10 +26,6 @@
 
 .hidden {
     display: none;
-}
-
-.head-menu {
-    background: #333;
 }
 
 .icon-bar {
