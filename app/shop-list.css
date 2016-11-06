@@ -60,6 +60,10 @@ item, list {
     padding: 15px;
 }
 
+.list-table a {
+    padding-left: 15px;
+}
+
 .table-row {
     border-bottom: 1px solid gray;
     padding: 5px 0 5px 0;

@@ -10,7 +10,7 @@ class List {
 
     delete (prop) {
         delete this[prop];
-        for (var i = prop; i < this.length; i++) {
+        for (var i = prop; i < this.length-1; i++) {
             this[i] = this[i+1];
             this[i].number = i;
         };

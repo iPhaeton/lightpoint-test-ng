@@ -4,6 +4,20 @@
     <h3 class="panel-title" data-target="#panel-{{item.id}}" data-toggle="collapse" data-parent="{{parentId}}">
         {{item.number + 1}}. {{item.name}}
     </h3>
+    <div class="navbar list-menu">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#">
+                    Редактировать
+                </a>
+            </li>
+            <li>
+                <a href="#" ng-click="deleteItem()">
+                    Удалить
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
 <div class="panel-collapse collapse" id="panel-{{item.id}}">
     <div class="panel-body">
