@@ -9,7 +9,8 @@ angular.module("list").directive("list", () => {
         },
         templateUrl: (elem, attr) => {
             if (attr.type === "collapsable") return "components/list/list-collapsable.html";
-            else return "components/list/empty.html"
+            else if (attr.type === "table") return "components/list/list-table.html";
+            else return "components/list/empty.html";
         },
         controller: "ListController"
     }

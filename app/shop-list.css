@@ -51,14 +51,16 @@
     display: block;
 }
 
-.commodity-table a {
-	padding-left: 15px;
-}
-
-.commodity-table a:hover {
-	cursor: pointer;
-}
-
 item, list {
     display: block;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+.list-table {
+    padding: 15px;
+}
+
+.table-row {
+    border-bottom: 1px solid gray;
+    padding: 5px 0 5px 0;
 }

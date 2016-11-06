@@ -9,6 +9,7 @@
     <div class="panel-body">
         <h3>{{item.name}}</h3>
         <p ng-repeat="data in item.data">{{data}}</p>
-        <list list="item.innerList.list" type="table"></list>
+        <a href="#" ng-click="showInnerList()">{{item.innerList.button}}</a>
+        <list list="item.innerList.list" type="table" ng-show="innerListVisible"></list>
     </div>
 </div>
