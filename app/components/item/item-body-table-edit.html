@@ -1,0 +1,14 @@
+<form class="collabpsable-edit" ng-submit="saveItem()">
+    <div class="col-md-4">
+        <label for="name-input" class="sr-only">Название</label>
+        <input id="name-input" type="text" class="form-control" name="name-input" value="{{editedItem.name}}" ng-model="editedItem.name">
+    </div>
+    <div class="col-sm-4">
+        <label for="descr-input" class="sr-only">Описание</label>
+        <input id="descr-input" type="text" class="form-control" name="descr-input" value="{{editedItem.description}}" ng-model="editedItem.description">
+    </div>
+    <div class="col-sm-4">
+        <button class="btn btn-default" type="submit">Сохранить</button>
+        <a href="#" ng-click="deleteItem()">Удалить</a>
+    </div>
+</form>

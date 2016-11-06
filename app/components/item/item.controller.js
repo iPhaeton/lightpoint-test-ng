@@ -32,7 +32,10 @@ angular.module("item").controller("ItemController", ["$scope", ($scope) => {
                 break;
             case "components/item/item-body-table.html":
                 $scope.bodyUrl = "components/item/item-body-table-edit.html";
-                $scope.editedItem = {};
+                $scope.editedItem = {
+                    name: $scope.item.name,
+                    description: $scope.item.description
+                };
                 break;
             case "components/item/item-body-table-edit.html":
                 $scope.bodyUrl = "components/item/item-body-table.html";
@@ -46,7 +49,9 @@ angular.module("item").controller("ItemController", ["$scope", ($scope) => {
 
     $scope.saveItem = function () {
         $scope.item.name = $scope.editedItem.name;
-        $scope.item.data = $scope.editedItem.data;
+
+        if ($scope.editedItem.data) $scope.item.data = $scope.editedItem.data;
+        if ($scope.editedItem.description) $scope.item.description = $scope.editedItem.description;
 
         $scope.editedItem = {};
 
