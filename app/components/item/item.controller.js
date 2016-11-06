@@ -1,4 +1,6 @@
-angular.module("item").controller("ItemController", ["$scope", ($scope) => {
+angular.module("item").controller("ItemController", ["$scope", "$element", ($scope, $element) => {
+    $scope.moving = false;
+
     var list = $scope.$parent.$parent.$parent.list;
 
     if (!$scope.bodyUrl) $scope.bodyUrl = "components/item/item-body-" + $scope.type + ".html";
@@ -60,5 +62,10 @@ angular.module("item").controller("ItemController", ["$scope", ($scope) => {
 
     $scope.cancelItem = function () {
         $scope.toggleEditMode();
-    }
+    };
+
+    $scope.initMover = function () {
+        var mover = $scope.$parent.$parent.$parent.mover;
+        mover.watch($($element));
+    };
 }]);

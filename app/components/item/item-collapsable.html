@@ -1,5 +1,5 @@
 <!--An item for a collabsable list without an inner list-->
-<div class="panel-heading">
+<div class="panel-heading" ng-mousedown="initMover()" ng-mouseup="clearMover()">
     <h3 class="panel-title" data-target="#panel-{{item.id}}" data-toggle="collapse" data-parent="{{parentId}}" ng-click="closeAll()">
         {{item.number + 1}}. {{item.name}}
     </h3>

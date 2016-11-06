@@ -4,4 +4,6 @@ angular.module("list").controller("ListController", ["$scope", ($scope) => {
     $scope.addItem = function () {
         $scope.list.add();
     };
+
+    $scope.mover = new Mover ();
 }]);
