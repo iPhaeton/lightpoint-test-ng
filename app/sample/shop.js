@@ -12,7 +12,7 @@ class Shop {
         this.innerList = {
             list: self.commodities,
             button: "Показать товары",
-            type: "collapsable"
+            type: "table"
         }
     };
 

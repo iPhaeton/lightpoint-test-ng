@@ -5,13 +5,10 @@ angular.module("list").directive("list", () => {
         restrict: "E",
         scope: {
             list: "=?",
+            type: "=",
             parentId: "@?"
         },
-        templateUrl: (elem, attr) => {
-            if (attr.type === "collapsable") return "components/list/list-collapsable.html";
-            else if (attr.type === "table") return "components/list/list-table.html";
-            else return "components/list/empty.html";
-        },
+        template: "<div ng-include=\"'components/list/list-' + type + '.html'\"></div>",
         controller: "ListController"
     }
 });
