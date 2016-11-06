@@ -1,16 +1,13 @@
-<form class="collabpsable-edit">
+<form class="collabpsable-edit" ng-submit="saveItem()">
     <div class="form-group input-group">
         <label for="name-input">Название</label>
-        <input id="name-input" type="text" class="form-control" name="name-input">
+        <input id="name-input" type="text" class="form-control" name="name-input" value="{{editedItem.name}}" ng-model="editedItem.name">
     </div>
-    <div class="form-group input-group">
-        <label for="address-input">Адрес</label>
-        <input id="address-input" type="text" class="form-control" name="address-input">
+    <div class="form-group input-group" ng-repeat="(key, value) in editedItem.data">
+        <label for="address-input">{{key}}</label>
+        <input id="address-input" type="text" class="form-control" name="address-input" value="{{value}}" ng-model="editedItem.data[key]">
     </div>
-    <div class="form-group input-group">
-        <label for="hours-input">Время работы</label>
-        <input id="hours-input" type="text" class="form-control" name="hours-input">
-    </div>
+
     <a href="#" ng-click="showInnerList()">{{item.innerList.button}}</a>
     <list list="item.innerList.list" type="item.innerList.type" ng-show="innerListVisible"></list>
     <button type="submit" class="btn btn-default">Сохранить</button>
