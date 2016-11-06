@@ -85,3 +85,49 @@ item, list {
     border-bottom: 1px solid gray;
     padding: 5px 0 5px 0;
 }
+
+@media (min-width: 768px) {
+    .col-sm-4 {
+        width: 33.33333333%;
+        float: left;
+    }
+}
+
+@media (max-width: 767px) {
+    .table-header {
+        display: none;
+    }
+
+    .table-row {
+        border-bottom: 2px solid gray;
+    }
+
+    .item {
+        border-bottom: 1px solid gray;
+    }
+
+    .table-row a, .table-row button {
+        padding-left: 0;
+        padding-bottom: 5px;
+        display: block;
+    }
+
+    .list-menu, .panel-title {
+        float: none;
+    }
+
+    .list-menu li {
+        display: inline-block;
+        margin-right: 0;
+        margin-left: 15px;
+    }
+
+    .show-innerList {
+        display: block;
+        padding-bottom: 5px;
+    }
+
+    .col-sm-4 {
+        margin-bottom: 10px;
+    }
+}

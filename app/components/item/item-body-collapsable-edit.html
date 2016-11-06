@@ -8,7 +8,7 @@
         <input id="address-input" type="text" class="form-control" name="address-input" value="{{value}}" ng-model="editedItem.data[key]">
     </div>
 
-    <a href="#" ng-click="showInnerList()">{{item.innerList.button}}</a>
+    <a href="#" ng-click="showInnerList()" class="show-innerList">{{item.innerList.button}}</a>
     <list list="item.innerList.list" type="item.innerList.type" ng-show="innerListVisible"></list>
     <button type="submit" class="btn btn-default">Сохранить</button>
     <button class="btn btn-default" ng-click="cancelItem()">Отмена</button>
