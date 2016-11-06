@@ -20,10 +20,7 @@
     </div>
 </div>
 <div class="panel-collapse collapse" id="panel-{{item.id}}">
-    <div class="panel-body">
-        <h3>{{item.name}}</h3>
-        <p ng-repeat="(key, value) in item.data">{{key}}: {{value}}</p>
-        <a href="#" ng-click="showInnerList()">{{item.innerList.button}}</a>
-        <list list="item.innerList.list" type="item.innerList.type" ng-show="innerListVisible"></list>
+    <div class="panel-body" ng-include="bodyUrl">
+
     </div>
 </div>

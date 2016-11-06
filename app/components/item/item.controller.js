@@ -1,6 +1,8 @@
 angular.module("item").controller("ItemController", ["$scope", ($scope) => {
     var list = $scope.$parent.$parent.$parent.list;
 
+    $scope.bodyUrl = "components/item/item-body-" + $scope.type + ".html";
+
     $scope.parentId = "#" + $scope.parentId;
     $scope.innerListVisible = false;
 
@@ -14,18 +16,18 @@ angular.module("item").controller("ItemController", ["$scope", ($scope) => {
     };
 
     $scope.toggleEditMode = function () {
-        switch ($scope.type) {
-            case "collapsable":
-                $scope.type = "collapsable-edit";
+        switch ($scope.bodyUrl) {
+            case "components/item/item-body-collapsable.html":
+                $scope.bodyUrl = "components/item/item-body-collapsable-edit.html";
                 break;
-            case "collapsable-edit":
-                $scope.type = "collapsable";
+            case "components/item/item-body-collapsable-edit.html":
+                $scope.bodyUrl = "components/item/item-body-collapsable.html";
                 break;
-            case "table":
-                $scope.type = "table-edit";
+            case "components/item/item-body-table.html":
+                $scope.bodyUrl = "components/item/item-body-table-edit.html";
                 break;
-            case "table-edit":
-                $scope.type = "table";
+            case "components/item/item-body-table-edit.html":
+                $scope.bodyUrl = "components/item/item-body-table.html";
                 break;
         };
     };
