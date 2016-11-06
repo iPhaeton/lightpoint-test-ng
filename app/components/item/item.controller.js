@@ -57,4 +57,8 @@ angular.module("item").controller("ItemController", ["$scope", ($scope) => {
 
         $scope.toggleEditMode();
     };
+
+    $scope.cancelItem = function () {
+        $scope.toggleEditMode();
+    }
 }]);

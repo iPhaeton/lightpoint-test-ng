@@ -8,7 +8,8 @@
         <input id="descr-input" type="text" class="form-control" name="descr-input" value="{{editedItem.description}}" ng-model="editedItem.description">
     </div>
     <div class="col-sm-4">
-        <button class="btn btn-default" type="submit">Сохранить</button>
+        <button class="a-button" type="submit">Сохранить</button>
+        <a href="#" ng-click="cancelItem()">Отмена</a>
         <a href="#" ng-click="deleteItem()">Удалить</a>
     </div>
 </form>

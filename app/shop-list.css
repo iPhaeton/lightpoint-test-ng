@@ -60,6 +60,17 @@ item, list {
     display: block;
 }
 
+.a-button {
+    background-color: transparent;
+    border: none;
+    color: #337ab7;
+    padding-left: 15px;
+}
+
+.a-button:hover {
+    text-decoration: underline;
+}
+
 /*-----------------------------------------------------------------------------------------------------*/
 .list-table {
     padding: 15px;
