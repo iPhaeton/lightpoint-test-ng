@@ -43,10 +43,15 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
                 $scope.bodyUrl = "components/item/item-body-table.html";
                 break;
         };
+        $scope.closeAll();
+        $element.find(".collapse").collapse("show");
     };
 
     $scope.closeAll = function () {
-        $(".collapse").collapse("hide");
+        $(".collapse").each((i, elem) => {
+            var elem = $(elem);
+            if (elem.get(0) !== $element.find(".collapse").get(0)) elem.collapse("hide");
+        })
     };
 
     $scope.saveItem = function () {
