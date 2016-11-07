@@ -1,4 +1,3 @@
 <h3>{{item.name}}</h3>
 <p ng-repeat="(key, value) in item.data">{{key}}: {{value}}</p>
 <a href="#" ng-click="showInnerList()" class="show-innerList">{{item.innerList.button}}</a>
-<list list="item.innerList.list" type="item.innerList.type" ng-show="innerListVisible"></list>

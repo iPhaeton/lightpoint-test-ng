@@ -4,6 +4,7 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
     var list = $scope.$parent.$parent.$parent.list;
 
     if (!$scope.bodyUrl) $scope.bodyUrl = "components/item/item-body-" + $scope.type + ".html";
+    $scope.mode = "view";
 
     $scope.parentId = "#" + $scope.parentId;
     $scope.innerListVisible = false;
@@ -21,6 +22,7 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
         switch ($scope.bodyUrl) {
             case "components/item/item-body-collapsable.html":
                 $scope.bodyUrl = "components/item/item-body-collapsable-edit.html";
+                $scope.mode = "edit";
                 $scope.editedItem = {
                     name: $scope.item.name,
                     data: {}
@@ -28,12 +30,15 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
                 for (var data in $scope.item.data) {
                     $scope.editedItem.data[data] = $scope.item.data[data];
                 };
+
                 break;
             case "components/item/item-body-collapsable-edit.html":
                 $scope.bodyUrl = "components/item/item-body-collapsable.html";
+                $scope.mode = "view";
                 break;
             case "components/item/item-body-table.html":
                 $scope.bodyUrl = "components/item/item-body-table-edit.html";
+                $scope.mode = "edit";
                 $scope.editedItem = {
                     name: $scope.item.name,
                     description: $scope.item.description
@@ -41,6 +46,7 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
                 break;
             case "components/item/item-body-table-edit.html":
                 $scope.bodyUrl = "components/item/item-body-table.html";
+                $scope.mode = "view";
                 break;
         };
         if ($scope.type === "collapsable") {
@@ -63,18 +69,18 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
     $scope.$on("save", () => {
         if (!$scope.item || !$scope.editedItem) return;
 
-        $scope.item.name = $scope.editedItem.name;
+        if ($scope.editedItem.name) $scope.item.name = $scope.editedItem.name;
 
         if ($scope.editedItem.data) $scope.item.data = $scope.editedItem.data;
         if ($scope.editedItem.description) $scope.item.description = $scope.editedItem.description;
 
         $scope.editedItem = {};
 
-        $scope.toggleEditMode();
+        if ($scope.mode === "edit") $scope.toggleEditMode();
     });
 
     $scope.cancelItem = function () {
-        $scope.toggleEditMode();
+        if ($scope.mode === "edit") $scope.toggleEditMode();
     };
 
     $scope.initMover = function () {

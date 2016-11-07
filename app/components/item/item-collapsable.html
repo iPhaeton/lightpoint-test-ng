@@ -19,7 +19,8 @@
     </div>
 </div>
 <div class="panel-collapse collapse" id="panel-{{item.id}}">
-    <div class="panel-body" ng-include="bodyUrl">
-
+    <div class="panel-body">
+        <ng-include src="bodyUrl"></ng-include>
+        <list list="item.innerList.list" type="item.innerList.type" ng-show="innerListVisible"></list>
     </div>
 </div>
