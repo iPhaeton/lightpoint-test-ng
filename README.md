@@ -1,1 +1,1 @@
-https://iphaeton.github.io/lightpoint-test/
+https://iphaeton.github.io/lightpoint-test-ng/
