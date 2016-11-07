@@ -66,6 +66,16 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
 
     $scope.initMover = function () {
         var mover = $scope.$parent.$parent.$parent.mover;
-        mover.watch($($element));
+        mover.watch($element, "item.panel", (pasteBefore, pasteAfter) => {
+            if (pasteAfter) {
+                $scope.$apply(() => {
+                    list.moveAfter($scope.item.number, angular.element(pasteAfter).scope().item.number);
+                });
+            } else if (pasteBefore) {
+                $scope.$apply(() => {
+                    list.moveBefore($scope.item.number, angular.element(pasteBefore).scope().item.number);
+                });
+            }
+        });
     };
 }]);
