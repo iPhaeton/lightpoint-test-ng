@@ -35,6 +35,10 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
             case "app/components/item/item-body-collapsable-edit.html":
                 $scope.bodyUrl = "app/components/item/item-body-collapsable.html";
                 $scope.mode = "view";
+                $scope.editedItem = {
+                    name: $scope.item.name,
+                    data: {}
+                };
                 break;
             case "app/components/item/item-body-table.html":
                 $scope.bodyUrl = "app/components/item/item-body-table-edit.html";
@@ -47,6 +51,10 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
             case "app/components/item/item-body-table-edit.html":
                 $scope.bodyUrl = "app/components/item/item-body-table.html";
                 $scope.mode = "view";
+                $scope.editedItem = {
+                    name: $scope.item.name,
+                    description: $scope.item.description
+                };
                 break;
         };
         if ($scope.type === "collapsable") {
