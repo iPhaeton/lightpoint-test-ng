@@ -57,6 +57,12 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
     };
 
     $scope.saveItem = function () {
+        $scope.$broadcast("save");
+    };
+
+    $scope.$on("save", () => {
+        if (!$scope.item || !$scope.editedItem) return;
+
         $scope.item.name = $scope.editedItem.name;
 
         if ($scope.editedItem.data) $scope.item.data = $scope.editedItem.data;
@@ -65,7 +71,7 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
         $scope.editedItem = {};
 
         $scope.toggleEditMode();
-    };
+    });
 
     $scope.cancelItem = function () {
         $scope.toggleEditMode();
