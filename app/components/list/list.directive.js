@@ -8,7 +8,7 @@ angular.module("list").directive("list", () => {
             type: "=",
             parentId: "@?"
         },
-        template: "<div ng-include=\"'components/list/list-' + type + '.html'\"></div>",
+        template: "<div ng-include=\"'app/components/list/list-' + type + '.html'\"></div>",
         controller: "ListController"
     }
 });

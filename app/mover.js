@@ -46,13 +46,13 @@ class Mover {
             $(document).off("mousemove", self.selectAvailableSpaces);
             self.initialized = false;
             console.log("clear");
-
-            $(document.body).css({
-                cursor: "default"
-            });
         };
 
         $(document).off("mouseup", self.clear);
+
+        $(document.body).css({
+            cursor: "default"
+        });
     };
 
     selectAvailableSpaces (event) {

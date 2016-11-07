@@ -8,7 +8,7 @@ angular.module("item").directive("item", () => {
             type: "@",
             parentId: "=?"
         },
-        template: "<div ng-include=\"'components/item/item-' + type + '.html'\"></div>",
+        template: "<div ng-include=\"'app/components/item/item-' + type + '.html'\"></div>",
         controller: "ItemController"
     }
 });

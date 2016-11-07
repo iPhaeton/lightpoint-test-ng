@@ -3,7 +3,7 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
 
     var list = $scope.$parent.$parent.$parent.list;
 
-    if (!$scope.bodyUrl) $scope.bodyUrl = "components/item/item-body-" + $scope.type + ".html";
+    if (!$scope.bodyUrl) $scope.bodyUrl = "app/components/item/item-body-" + $scope.type + ".html";
     $scope.mode = "view";
 
     $scope.parentId = "#" + $scope.parentId;
@@ -20,8 +20,8 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
 
     $scope.toggleEditMode = function () {
         switch ($scope.bodyUrl) {
-            case "components/item/item-body-collapsable.html":
-                $scope.bodyUrl = "components/item/item-body-collapsable-edit.html";
+            case "app/components/item/item-body-collapsable.html":
+                $scope.bodyUrl = "app/components/item/item-body-collapsable-edit.html";
                 $scope.mode = "edit";
                 $scope.editedItem = {
                     name: $scope.item.name,
@@ -32,20 +32,20 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
                 };
 
                 break;
-            case "components/item/item-body-collapsable-edit.html":
-                $scope.bodyUrl = "components/item/item-body-collapsable.html";
+            case "app/components/item/item-body-collapsable-edit.html":
+                $scope.bodyUrl = "app/components/item/item-body-collapsable.html";
                 $scope.mode = "view";
                 break;
-            case "components/item/item-body-table.html":
-                $scope.bodyUrl = "components/item/item-body-table-edit.html";
+            case "app/components/item/item-body-table.html":
+                $scope.bodyUrl = "app/components/item/item-body-table-edit.html";
                 $scope.mode = "edit";
                 $scope.editedItem = {
                     name: $scope.item.name,
                     description: $scope.item.description
                 };
                 break;
-            case "components/item/item-body-table-edit.html":
-                $scope.bodyUrl = "components/item/item-body-table.html";
+            case "app/components/item/item-body-table-edit.html":
+                $scope.bodyUrl = "app/components/item/item-body-table.html";
                 $scope.mode = "view";
                 break;
         };

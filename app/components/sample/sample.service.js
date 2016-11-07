@@ -4,7 +4,7 @@ angular.
     module('sample').
     factory('Sample', ['$resource',
         function($resource) {
-            return $resource('sample.json', {}, {
+            return $resource('app/sample.json', {}, {
                 query: {
                     method: 'GET',
                     //params: {phoneId: 'phones'},
