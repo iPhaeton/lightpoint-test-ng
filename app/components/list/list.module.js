@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('list', []);
+angular.module('list', ["sample"]);

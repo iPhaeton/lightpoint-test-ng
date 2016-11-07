@@ -22,5 +22,8 @@ function createSample () {
         list.add(shop);
     };
 
+    var json = JSON.stringify(list);
+    console.log(json);
+
     return list;
 };

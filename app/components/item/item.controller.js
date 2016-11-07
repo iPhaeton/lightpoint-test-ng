@@ -43,8 +43,10 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
                 $scope.bodyUrl = "components/item/item-body-table.html";
                 break;
         };
-        $scope.closeAll();
-        $element.find(".collapse").collapse("show");
+        if ($scope.type === "collapsable") {
+            $scope.closeAll();
+            $element.find(".collapse").collapse("show");
+        };
     };
 
     $scope.closeAll = function () {

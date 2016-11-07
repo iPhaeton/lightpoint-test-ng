@@ -6,8 +6,8 @@ class List {
     };
 
     add (value) {
-        value.number = this.length;
-        value.id = this.nextItemId++;
+        if (!value.number) value.number = this.length;
+        if (!value.number) value.id = this.nextItemId++;
         this[this.length++] = value;
     };
 
