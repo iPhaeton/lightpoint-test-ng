@@ -9,6 +9,13 @@ class Mover {
             this.init(elem, selector, callback);
         }, 300);
         $(document).on("mouseup", {self: this}, this.clear);
+
+        $(document.body).css({
+            cursor: "-webkit-grab"
+        });
+        $(document.body).css({
+            cursor: "grab"
+        });
     };
 
     init (elem, selector, callback) {
@@ -39,6 +46,10 @@ class Mover {
             $(document).off("mousemove", self.selectAvailableSpaces);
             self.initialized = false;
             console.log("clear");
+
+            $(document.body).css({
+                cursor: "default"
+            });
         };
 
         $(document).off("mouseup", self.clear);
