@@ -1,3 +1,3 @@
 "use strict";
 
-angular.module("item", []);
+angular.module("item", ["mover"]);

@@ -3,8 +3,6 @@ angular.module("list").controller("ListController", ["$scope", "Sample", ($scope
         $scope.list.add();
     };
 
-    $scope.mover = new Mover ();
-
     if (!$scope.list) {
         $scope.list = new ShopList();
         Sample.get({}, (result) => {

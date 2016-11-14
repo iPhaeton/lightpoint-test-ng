@@ -1,4 +1,4 @@
-angular.module("item").controller("ItemController", ["$scope", "$element", ($scope, $element) => {
+angular.module("item").controller("ItemController", ["$scope", "$element", "Mover", ($scope, $element, Mover) => {
     $scope.moving = false;
 
     var list = $scope.$parent.$parent.$parent.list;
@@ -92,8 +92,7 @@ angular.module("item").controller("ItemController", ["$scope", "$element", ($sco
     };
 
     $scope.initMover = function () {
-        var mover = $scope.$parent.$parent.$parent.mover;
-        mover.watch($element, "item.panel", (pasteBefore, pasteAfter) => {
+        Mover.watch($element, "item.panel", (pasteBefore, pasteAfter) => {
             if (pasteAfter) {
                 $scope.$apply(() => {
                     list.moveAfter($scope.item.number, angular.element(pasteAfter).scope().item.number);
